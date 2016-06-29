@@ -1,0 +1,11 @@
+email: jbradley@arcticlcc.org
+fullname: 'Josh Bradley'
+title: 'Master of Web'
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$M2zcw/IY/zlQGtLxCy9.uO/NhRDezKQHhyS44V/n1C1qpWcV6vPxC

@@ -1,0 +1,35 @@
+/*
+!/.gitignore
+
+# Composer
+.composer
+vendor/
+
+# Sass
+.sass-cache
+
+# Grav Specific
+!.htaccess
+!README.md
+!composer.json
+!composer.lock
+!user/
+user/themes/antimatter
+!system/
+
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# phpstorm
+.idea/*
+user/config/security.yaml
+
+tests/_output/*
+tests/_support/_generated/*
+tests/cache/*
+tests/error.log
