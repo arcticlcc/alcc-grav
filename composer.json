@@ -26,7 +26,8 @@
         "maximebf/debugbar": "~1.10",
         "ext-mbstring": "*",
         "ext-openssl": "*",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "twbs/bootstrap-sass": "^3.3"
     },
     "require-dev": {
         "codeception/codeception": "^2.1",

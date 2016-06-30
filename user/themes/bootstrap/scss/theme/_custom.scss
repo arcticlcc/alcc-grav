@@ -1,0 +1,17 @@
+.main-navbar.navbar {
+  padding: 0 0 .5rem;
+
+  .navbar-wrapper {
+    padding: .5rem 8rem 0;
+  }
+
+  .navbar-topper {
+    background-color: $body-bg;
+    padding: .5rem 8rem 0;
+  }
+
+  &.scrolled {
+    box-shadow: 0 .05rem 1rem $gray-light;
+    opacity: .9;
+  }
+}

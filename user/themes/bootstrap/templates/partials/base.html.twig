@@ -23,6 +23,7 @@
                 {% do assets.add('theme://js/html5shiv-printshiv.min.js') %}
             {% endif %}
 
+            {% do assets.add('theme://js/custom.js') %}
         {% endblock %}
         {{ assets.js() }}
 

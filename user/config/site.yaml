@@ -1,7 +1,16 @@
-title: Grav
+title: 'Arctic LCC'
 author:
-  name: Joe Bloggs
-  email: 'joe@test.com'
+  name: 'Arctic LCC Staff'
+  email: staff@arcticlcc.org
+taxonomies:
+  - category
+  - tag
 metadata:
-    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
-
+  description: 'Arctic Landscape Conservation Cooperative'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog
