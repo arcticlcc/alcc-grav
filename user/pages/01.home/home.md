@@ -1,5 +1,7 @@
 ---
 title: Home
+visible: false
+nav: false
 ---
 
 # Grav is Running!

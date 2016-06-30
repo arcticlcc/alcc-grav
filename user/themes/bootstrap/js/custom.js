@@ -22,7 +22,7 @@ This code is based on https://github.com/getgrav/grav-theme-antimatter/blob/deve
 // The selector to apply the effect
 var selector = ".navbar";
 // The value, when reached, activates the effect
-var scrolledAt = 200;
+var scrolledAt = 100;
 
 var isTouch = window.DocumentTouch && document instanceof DocumentTouch;
 function scrollHeader() {
@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
         $(document).scroll(function() {
             scrollHeader();
         });
-    };
+    }
 
     // TOUCH SCROLL
     $(document).on({

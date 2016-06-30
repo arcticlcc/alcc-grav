@@ -1,17 +1,76 @@
+body {
+    padding-top: 115px;
+}
+
 .main-navbar.navbar {
-  padding: 0 0 .5rem;
+  @include gradient-vertical($brand-success, $navbar-inverse-bg, 50%, 51%);
+    .navbar-wrapper {
+        //padding: .5rem 8rem 0;
+    }
 
-  .navbar-wrapper {
-    padding: .5rem 8rem 0;
-  }
+    .navbar-topper {
+        //background-color: $brand-info;
+        color: $body-bg;
+        //padding: .5rem 8rem 0;
 
-  .navbar-topper {
-    background-color: $body-bg;
-    padding: .5rem 8rem 0;
-  }
+        .title {
+            font-weight: 500;
+            padding-left: $navbar-padding-horizontal;
+        }
+    }
 
-  &.scrolled {
-    box-shadow: 0 .05rem 1rem $gray-light;
-    opacity: .9;
-  }
+    .navbar-brand {
+        padding: 6px $navbar-padding-horizontal;
+        font-size: $font-size-large;
+        line-height: $line-height-computed;
+        height: $navbar-height;
+
+        img {
+            border: 2px solid $navbar-inverse-bg;
+            border-radius: 7px;
+            height: 48px;
+
+            &:focus,
+            &:hover {
+                border: 0;
+            }
+        }
+    }
+
+    .navbar-nav {
+        @media (min-width: $grid-float-breakpoint) {
+            > li {
+                margin: 0 2rem;
+
+                > a {
+                    padding-top: $navbar-padding-vertical;
+                    padding-bottom: $navbar-padding-vertical;
+                    background-color: transparent;
+
+                    &:focus,
+                    &:hover {
+                        color: $gray-lighter;
+                        //border-bottom: .5rem solid $brand-info;
+                    }
+                }
+
+                &.active > a {
+                    border-bottom: .5rem solid $navbar-inverse-link-active-color;
+
+                    &,
+                    &:focus,
+                    &:hover {
+                        color: $navbar-inverse-link-active-color;
+                        background-color: transparent;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+
+    &.scrolled {
+        box-shadow: 0 .05rem 1rem $gray-light;
+        opacity: .9;
+    }
 }
