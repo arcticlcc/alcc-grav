@@ -1,84 +1,159 @@
 $navbar-gradient: floor(($navbar-height * .4)) !default;
 $navbar-gradient-alt: #9eac5f;
-@mixin gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient, $navbar-gradient-size: 2, $color: $body-bg) {
+$navbar-gradient-alt: #66B8B8;
+$navbar-gradient-alt: $body-bg;
+$navbar-gradient-top: lighten($gray-dark,7);
+@mixin gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient, $navbar-gradient-size: 3, $color: $body-bg) {
     // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$brand-info+40,ffffff+41,ffffff+44,207cca+45
     // Old browsers
-    background: $brand-info;
+    background: $navbar-gradient-top;
     // FF3.6-15
-    background: -moz-linear-gradient(top, $brand-info $navbar-gradient-stop, $color $navbar-gradient-stop +1, $navbar-gradient-stop + $navbar-gradient-size, $brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    background: -moz-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop, $color $navbar-gradient-stop +1, $navbar-gradient-stop + $navbar-gradient-size, $brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
     // Chrome10-25,Safari5.1-6
-    background: -webkit-linear-gradient(top, $brand-info $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    background: -webkit-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
     // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
-    background: linear-gradient(to bottom, $brand-info $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    background: linear-gradient(to bottom, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
     //IE6-9
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$brand-info', endColorstr='$brand-primary',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0);
 }
+
 body {
     padding-top: 115px;
 }
+
+.container {
+    @media (max-width: $screen-md-min) {
+        width: 100%;
+
+        .search {
+            min-width: 3rem !important;
+        }
+    }
+}
+
 .main-navbar.navbar {
-    @include gradient-vertical-stripe($color: $navbar-gradient-alt);
-    &.home {
-        @include gradient-vertical-stripe();
-        .navbar-brand .brand-wrapper {
-            background: $body-bg;
-        }
+    min-height: $navbar-height * .6;
+
+    .title {
+        display: none;
     }
-    .navbar-wrapper {
-        //background-color: $brand-info;
-        //padding: .5rem 8rem 0;
-        .title {
-            color: $brand-primary;
-            display: inline-block;
-            font-weight: 900;
-            font-size: 1.2em;
-            line-height: $navbar-gradient * 0.8;
-            margin-left: 2rem;
-            padding: 10px 15px 0;
-        }
+
+    .navbar-nav {
+        margin: 0 (-$navbar-padding-horizontal);
     }
+
+    .navbar-toggle {
+        @include navbar-vertical-align(34px);
+        margin-top: ((($navbar-height * .6) - 34px) / 2);
+        margin-bottom: ((($navbar-height * .6) - 34px) / 2);
+    }
+
     .navbar-brand {
         padding: 8px $navbar-padding-horizontal;
-        font-size: $font-size-large;
+        //font-size: $font-size-large;
         line-height: $line-height-computed;
-        height: $navbar-height;
+        height: $navbar-height * .6;
+
         .brand-wrapper {
-            @include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
+            //@include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
             @include transition(all 1s ease);
-            border-radius: 10px;
-            display: inline-block;
-            padding: 2px;
+            //border-radius: 10px;
+            //display: inline-block;
+            //padding: 2px;
             &:hover {
                 background: $body-bg;
             }
         }
+
         img {
             //border: 2px solid $navbar-inverse-bg;
             //border-radius: 7px;
-            height: $navbar-gradient * 2;
+            height: $navbar-height * .4;
             //&:focus,
             //&:hover {
             //    border: 0;
             //}
         }
     }
+    @media (min-width: $grid-float-breakpoint) {
+         @include gradient-vertical-stripe($color: $navbar-gradient-alt);
+
+        &.home {
+            @include gradient-vertical-stripe();
+
+            .navbar-brand .brand-wrapper {
+                background: $body-bg;
+            }
+        }
+
+        .navbar-wrapper {
+            //background-color: $brand-info;
+            //padding: .5rem 8rem 0;
+            .title {
+                color: $body-bg;
+                display: inline-block;
+                font-weight: 400;
+                font-size: 1.4em;
+                line-height: $navbar-gradient * .8;
+                margin-left: 1rem;
+                padding: 10px 15px 0;
+                @media (min-width: $screen-md-min) {
+                    margin-left: 2rem;
+
+                }
+            }
+        }
+
+        .navbar-brand {
+            padding: 8px $navbar-padding-horizontal;
+            font-size: $font-size-large;
+            line-height: $line-height-computed;
+            height: $navbar-height;
+
+            .brand-wrapper {
+                @include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
+                @include transition(all 1s ease);
+                border-radius: 10px;
+                display: inline-block;
+                padding: 2px;
+
+                &:hover {
+                    background: $body-bg;
+                }
+            }
+
+            img {
+                //border: 2px solid $navbar-inverse-bg;
+                //border-radius: 7px;
+                height: $navbar-gradient * 2;
+                //&:focus,
+                //&:hover {
+                //    border: 0;
+                //}
+            }
+        }
+    }
+
     .navbar-nav {
         @media (min-width: $grid-float-breakpoint) {
             > li {
-                margin: 0 2rem;
+                margin: 0 1rem;
                 min-width: 10rem;
                 text-align: center;
+
                 > a {
                     background-color: transparent;
                     padding-bottom: 0; //$navbar-padding-vertical / 1.5;
                     padding-top: $navbar-padding-vertical / 2;
                     @include transition(all .5s ease);
+
                     &:focus,
                     &:hover {
                         color: lighten($brand-info, 2);
                         //border-bottom: .5rem solid $brand-info;
                     }
                 }
+
                 &.active > a {
                     //border-bottom: 1rem solid $navbar-inverse-link-active-color;
                     &,
@@ -88,6 +163,7 @@ body {
                         color: $navbar-inverse-link-active-color;
                         cursor: default;
                     }
+
                     .nav-link-hilite {
                         border-radius: 15px;
                         border-top: 15px solid $body-bg;
@@ -99,19 +175,25 @@ body {
                 }
             }
         }
+        @media (min-width: $screen-md-min) {
+            > li {
+                margin: 0 2rem;
+            }
+        }
     }
+
     &.scrolled {
-        box-shadow: 0 0.05rem 1rem $gray-light;
-        opacity: 0.9;
+        box-shadow: 0 .05rem 1rem $gray-light;
+        opacity: .9;
     }
-    .navbar-form {
-        padding-top: 5px;
-    }
+
 }
+
 .carousel {
     height: 350px;
     margin-bottom: 60px;
     color: $brand-primary;
+
     .carousel-control.left,
     .carousel-control.right {
         background: 0;
@@ -120,26 +202,32 @@ body {
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     z-index: 10;
+    background-color: rgba(0, 0, 0, 0.58);
+    border-radius: 25px;
+    padding: 10px;
+    bottom: 50px;
 }
 /* Declare heights because of positioning of img element */
 .carousel .item {
     height: 350px;
-    background-color: $brand-info;
 }
+
 .carousel-inner > .item > img {
     display: inline;
     vertical-align: middle;
-    height: 100%
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //min-width: 100%;
     //height: 300px;
+    //min-width: 100%;
+    //left: 0;
+    //top: 0;
+    //position: absolute;
+    width: 100%;
 }
+
 .fake {
     height: 100%;
     width: 100%;
 }
+
 .carousel-control .control-left,
 .carousel-control .control-right {
     position: absolute;
@@ -147,9 +235,86 @@ body {
     z-index: 5;
     display: inline-block;
 }
+
 .carousel-control .control-left {
     left: 50%;
 }
+
 .carousel-control .control-right {
     right: 50%;
+}
+
+.navbar-form.search-form {
+    padding: $nav-link-padding;
+    margin-left: 0;
+    margin-right: 0;
+
+    span.form-control-expand {
+        display: none;
+    }
+    @media (min-width: $grid-float-breakpoint) {
+        padding-top: 5px;
+        position: absolute;
+        right: 5px;
+
+        .form-group {
+            float: right !important;
+            transition: all .35s, border-radius 0s;
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input.form-control {
+            padding-right: 25px;
+            border: 0 none;
+            background: transparent;
+            box-shadow: none;
+            opacity: 0;
+            pointer-events: none;
+            width: 500px;
+        }
+        //.search-form .form-group:hover
+        .form-group.hover {
+            width: 100%;
+            border-radius: 4px 6px 4px 4px;
+
+            input.form-control {
+                pointer-events: all;
+                opacity: 1;
+                transition: all 1.75s ease;
+            }
+        }
+
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px #ffffff inset!important;
+            //border-radius: 8px;
+        }
+
+        .form-group span.form-control-expand {
+            position: absolute;
+            top: -1px;
+            right: -2px;
+            z-index: 1000;
+            display: block;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            color: #3596e0;
+            left: initial;
+            font-size: 14px;
+        }
+    }
+}
+
+body .footer {
+    padding: 2rem;
+    background-color: rgb(69, 69, 69);
+    margin-top: 3rem;
+    color: #FFF;
+    font-size: 1.5rem;
 }

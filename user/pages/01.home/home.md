@@ -1,41 +1,54 @@
 ---
 title: Home
-visible: false
 icon: house
+visible: false
 ---
 
-# Grav is Running!
-## You have installed **Grav** successfully
+[g-what-we-do name="what_we_do" attributes="class:what-we-do module" column_attributes="class:col-md-12"]
 
-Congratulations! You have installed the **Base Grav Package** that provides a **simple page** and the default **antimatter** theme to get you started.
+## Explain Stuff
+___
 
->>>>> If you want a more **full-featured** base install, you should check out [**Skeleton** packages available in the downloads](http://getgrav.org/downloads).
+[g-what-we-do-item attributes="class:col-md-4"]
 
-### Find out all about Grav
+<div class="item-icon">
+[g-icon icon="tree fa-5x" icon_type="fontawesome"][/g-icon]
+</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-* Learn about **Grav** by checking out our dedicated [Learn Grav](http://learn.getgrav.org) site.
-* Download **plugins**, **themes**, as well as other Grav **skeleton** packages from the [Grav Downloads](http://getgrav.org/downloads) page.
-* Check out our [Grav Development Blog](http://getgrav.org/blog) to find out the latest goings on in the Grav-verse.
+[/g-what-we-do-item]
 
-### Edit this Page
+[g-what-we-do-item attributes="class:col-md-4"]
+<div class="item-icon">
+[g-icon icon="users fa-5x" icon_type="fontawesome"][/g-icon]
+</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-To edit this page, simply navigate to the folder you installed **Grav** into, and then browse to the `user/pages/01.home` folder and open the `default.md` file in your [editor of choice](http://learn.getgrav.org/basics/requirements).  You will see the content of this page in [Markdown format](http://learn.getgrav.org/content/markdown).
+[/g-what-we-do-item]
 
-### Create a New Page
+[g-what-we-do-item attributes="class:col-md-4"]
 
-Creating a new page is a simple affair in **Grav**.  Simply follow these simple steps:
+<div class="item-icon">
+[g-icon icon="database fa-5x" icon_type="fontawesome"][/g-icon]
+</div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+[/g-what-we-do-item]
 
-1. Navigate to your pages folder: `user/pages/` and create a new folder.  In this example, we will use [explicit default ordering](http://learn.getgrav.org/content/content-pages) and call the folder `02.mypage`.
-2. Launch your text editor and paste in the following sample code:
+[/g-what-we-do]
 
-        ---
-        title: My New Page
-        ---
-        # My New Page!
+[g-clients name=clients attributes="class:clients module"]
 
-        This is the body of **my new page** and I can easily use _Markdown_ syntax here.
+## Show Partner Logos
+___
 
-3. Save this file in the `user/pages/02.mypage/` folder as `default.md`. This will tell **Grav** to render the page using the **default** template.
-4. That is it! Reload your browser to see your new page in the menu.
+[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
 
->>> NOTE: The page will automatically show up in the Menu after the "Home" menu item. If you wish to change the name that shows up in the Menu, simple add: `menu: My Page` between the dashes in the page content. This is called the YAML front matter, and it is where you configure page-specific options.
+
+[/g-clients]

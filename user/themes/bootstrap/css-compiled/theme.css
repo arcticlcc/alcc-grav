@@ -6070,52 +6070,86 @@ input[type="checkbox"] {
 body {
   padding-top: 115px; }
 
+@media (max-width: 992px) {
+  .container {
+    width: 100%; }
+    .container .search {
+      min-width: 3rem !important; } }
+
 .main-navbar.navbar {
-  background: #a8e6e5;
-  background: -moz-linear-gradient(top, #a8e6e5 40px, #9eac5f 41px, 42px, #336699 43px);
-  background: -webkit-linear-gradient(top, #a8e6e5 40px, #9eac5f 41px, #9eac5f 42px, #336699 43px);
-  background: linear-gradient(to bottom, #a8e6e5 40px, #9eac5f 41px, #9eac5f 42px, #336699 43px);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$brand-info', endColorstr='$brand-primary',GradientType=0); }
-  .main-navbar.navbar.home {
-    background: #a8e6e5;
-    background: -moz-linear-gradient(top, #a8e6e5 40px, #fff 41px, 42px, #336699 43px);
-    background: -webkit-linear-gradient(top, #a8e6e5 40px, #fff 41px, #fff 42px, #336699 43px);
-    background: linear-gradient(to bottom, #a8e6e5 40px, #fff 41px, #fff 42px, #336699 43px);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$brand-info', endColorstr='$brand-primary',GradientType=0); }
-    .main-navbar.navbar.home .navbar-brand .brand-wrapper {
-      background: #fff; }
-  .main-navbar.navbar .navbar-wrapper .title {
-    color: #336699;
-    display: inline-block;
-    font-weight: 900;
-    font-size: 1.2em;
-    line-height: 32px;
-    margin-left: 2rem;
-    padding: 10px 15px 0; }
+  min-height: 60px; }
+  .main-navbar.navbar .title {
+    display: none; }
+  .main-navbar.navbar .navbar-nav {
+    margin: 0 -15px; }
+  .main-navbar.navbar .navbar-toggle {
+    margin-top: 33px;
+    margin-bottom: 33px;
+    margin-top: 13px;
+    margin-bottom: 13px; }
   .main-navbar.navbar .navbar-brand {
     padding: 8px 15px;
-    font-size: 19px;
     line-height: 21px;
-    height: 100px; }
+    height: 60px; }
     .main-navbar.navbar .navbar-brand .brand-wrapper {
-      background: #a8e6e5;
-      background: -moz-linear-gradient(top, #a8e6e5 32px, #9eac5f 33px, 34px, #336699 35px);
-      background: -webkit-linear-gradient(top, #a8e6e5 32px, #9eac5f 33px, #9eac5f 34px, #336699 35px);
-      background: linear-gradient(to bottom, #a8e6e5 32px, #9eac5f 33px, #9eac5f 34px, #336699 35px);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$brand-info', endColorstr='$brand-primary',GradientType=0);
       -webkit-transition: all 1s ease;
       -o-transition: all 1s ease;
-      transition: all 1s ease;
-      border-radius: 10px;
-      display: inline-block;
-      padding: 2px; }
+      transition: all 1s ease; }
       .main-navbar.navbar .navbar-brand .brand-wrapper:hover {
         background: #fff; }
     .main-navbar.navbar .navbar-brand img {
-      height: 80px; }
+      height: 40px; }
+  @media (min-width: 768px) {
+    .main-navbar.navbar {
+      background: #454545;
+      background: -moz-linear-gradient(top, #454545 40px, #fff 41px, 43px, #336699 44px);
+      background: -webkit-linear-gradient(top, #454545 40px, #fff 41px, #fff 43px, #336699 44px);
+      background: linear-gradient(to bottom, #454545 40px, #fff 41px, #fff 43px, #336699 44px);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0); }
+      .main-navbar.navbar.home {
+        background: #454545;
+        background: -moz-linear-gradient(top, #454545 40px, #fff 41px, 43px, #336699 44px);
+        background: -webkit-linear-gradient(top, #454545 40px, #fff 41px, #fff 43px, #336699 44px);
+        background: linear-gradient(to bottom, #454545 40px, #fff 41px, #fff 43px, #336699 44px);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0); }
+        .main-navbar.navbar.home .navbar-brand .brand-wrapper {
+          background: #fff; }
+      .main-navbar.navbar .navbar-wrapper .title {
+        color: #fff;
+        display: inline-block;
+        font-weight: 400;
+        font-size: 1.4em;
+        line-height: 32px;
+        margin-left: 1rem;
+        padding: 10px 15px 0; } }
+    @media (min-width: 768px) and (min-width: 992px) {
+      .main-navbar.navbar .navbar-wrapper .title {
+        margin-left: 2rem; } }
+  @media (min-width: 768px) {
+      .main-navbar.navbar .navbar-brand {
+        padding: 8px 15px;
+        font-size: 19px;
+        line-height: 21px;
+        height: 100px; }
+        .main-navbar.navbar .navbar-brand .brand-wrapper {
+          background: #454545;
+          background: -moz-linear-gradient(top, #454545 32px, #fff 33px, 35px, #336699 36px);
+          background: -webkit-linear-gradient(top, #454545 32px, #fff 33px, #fff 35px, #336699 36px);
+          background: linear-gradient(to bottom, #454545 32px, #fff 33px, #fff 35px, #336699 36px);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0);
+          -webkit-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          transition: all 1s ease;
+          border-radius: 10px;
+          display: inline-block;
+          padding: 2px; }
+          .main-navbar.navbar .navbar-brand .brand-wrapper:hover {
+            background: #fff; }
+        .main-navbar.navbar .navbar-brand img {
+          height: 80px; } }
   @media (min-width: 768px) {
     .main-navbar.navbar .navbar-nav > li {
-      margin: 0 2rem;
+      margin: 0 1rem;
       min-width: 10rem;
       text-align: center; }
       .main-navbar.navbar .navbar-nav > li > a {
@@ -6137,11 +6171,12 @@ body {
         display: block;
         position: relative;
         bottom: -10px; } }
+  @media (min-width: 992px) {
+    .main-navbar.navbar .navbar-nav > li {
+      margin: 0 2rem; } }
   .main-navbar.navbar.scrolled {
     box-shadow: 0 0.05rem 1rem #999999;
-    opacity: 0.9; }
-  .main-navbar.navbar .navbar-form {
-    padding-top: 5px; }
+    opacity: .9; }
 
 .carousel {
   height: 350px;
@@ -6153,17 +6188,20 @@ body {
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10; }
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.58);
+  border-radius: 25px;
+  padding: 10px;
+  bottom: 50px; }
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 350px;
-  background-color: #a8e6e5; }
+  height: 350px; }
 
 .carousel-inner > .item > img {
   display: inline;
   vertical-align: middle;
-  height: 100%; }
+  width: 100%; }
 
 .fake {
   height: 100%;
@@ -6181,5 +6219,63 @@ body {
 
 .carousel-control .control-right {
   right: 50%; }
+
+.navbar-form.search-form {
+  padding: 10px 15px;
+  margin-left: 0;
+  margin-right: 0; }
+  .navbar-form.search-form span.form-control-expand {
+    display: none; }
+  @media (min-width: 768px) {
+    .navbar-form.search-form {
+      padding-top: 5px;
+      position: absolute;
+      right: 5px; }
+      .navbar-form.search-form .form-group {
+        float: right !important;
+        transition: all .35s, border-radius 0s;
+        width: 32px;
+        height: 32px;
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        border-radius: 6px;
+        border: 1px solid #ccc; }
+      .navbar-form.search-form .form-group input.form-control {
+        padding-right: 25px;
+        border: 0 none;
+        background: transparent;
+        box-shadow: none;
+        opacity: 0;
+        pointer-events: none;
+        width: 500px; }
+      .navbar-form.search-form .form-group.hover {
+        width: 100%;
+        border-radius: 4px 6px 4px 4px; }
+        .navbar-form.search-form .form-group.hover input.form-control {
+          pointer-events: all;
+          opacity: 1;
+          transition: all 1.75s ease; }
+      .navbar-form.search-form input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important; }
+      .navbar-form.search-form .form-group span.form-control-expand {
+        position: absolute;
+        top: -1px;
+        right: -2px;
+        z-index: 1000;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        color: #3596e0;
+        left: initial;
+        font-size: 14px; } }
+
+body .footer {
+  padding: 2rem;
+  background-color: #454545;
+  margin-top: 3rem;
+  color: #FFF;
+  font-size: 1.5rem; }
 
 /*# sourceMappingURL=theme.css.map */

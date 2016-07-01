@@ -1,4 +1,4 @@
 ---
 title: 'About Us'
-icon: 'info'
+icon: 'info-circle'
 ---
