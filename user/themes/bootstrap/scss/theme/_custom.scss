@@ -1,76 +1,155 @@
+$navbar-gradient: floor(($navbar-height * .4)) !default;
+$navbar-gradient-alt: #9eac5f;
+@mixin gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient, $navbar-gradient-size: 2, $color: $body-bg) {
+    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$brand-info+40,ffffff+41,ffffff+44,207cca+45
+    // Old browsers
+    background: $brand-info;
+    // FF3.6-15
+    background: -moz-linear-gradient(top, $brand-info $navbar-gradient-stop, $color $navbar-gradient-stop +1, $navbar-gradient-stop + $navbar-gradient-size, $brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    // Chrome10-25,Safari5.1-6
+    background: -webkit-linear-gradient(top, $brand-info $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+    background: linear-gradient(to bottom, $brand-info $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    //IE6-9
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$brand-info', endColorstr='$brand-primary',GradientType=0);
+}
 body {
     padding-top: 115px;
 }
-
 .main-navbar.navbar {
-  @include gradient-vertical($brand-success, $navbar-inverse-bg, 50%, 51%);
-    .navbar-wrapper {
-        //padding: .5rem 8rem 0;
-    }
-
-    .navbar-topper {
-        //background-color: $brand-info;
-        color: $body-bg;
-        //padding: .5rem 8rem 0;
-
-        .title {
-            font-weight: 500;
-            padding-left: $navbar-padding-horizontal;
+    @include gradient-vertical-stripe($color: $navbar-gradient-alt);
+    &.home {
+        @include gradient-vertical-stripe();
+        .navbar-brand .brand-wrapper {
+            background: $body-bg;
         }
     }
-
+    .navbar-wrapper {
+        //background-color: $brand-info;
+        //padding: .5rem 8rem 0;
+        .title {
+            color: $brand-primary;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 1.2em;
+            line-height: $navbar-gradient * 0.8;
+            margin-left: 2rem;
+            padding: 10px 15px 0;
+        }
+    }
     .navbar-brand {
-        padding: 6px $navbar-padding-horizontal;
+        padding: 8px $navbar-padding-horizontal;
         font-size: $font-size-large;
         line-height: $line-height-computed;
         height: $navbar-height;
-
-        img {
-            border: 2px solid $navbar-inverse-bg;
-            border-radius: 7px;
-            height: 48px;
-
-            &:focus,
+        .brand-wrapper {
+            @include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
+            @include transition(all 1s ease);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 2px;
             &:hover {
-                border: 0;
+                background: $body-bg;
             }
         }
+        img {
+            //border: 2px solid $navbar-inverse-bg;
+            //border-radius: 7px;
+            height: $navbar-gradient * 2;
+            //&:focus,
+            //&:hover {
+            //    border: 0;
+            //}
+        }
     }
-
     .navbar-nav {
         @media (min-width: $grid-float-breakpoint) {
             > li {
                 margin: 0 2rem;
-
+                min-width: 10rem;
+                text-align: center;
                 > a {
-                    padding-top: $navbar-padding-vertical;
-                    padding-bottom: $navbar-padding-vertical;
                     background-color: transparent;
-
+                    padding-bottom: 0; //$navbar-padding-vertical / 1.5;
+                    padding-top: $navbar-padding-vertical / 2;
+                    @include transition(all .5s ease);
                     &:focus,
                     &:hover {
-                        color: $gray-lighter;
+                        color: lighten($brand-info, 2);
                         //border-bottom: .5rem solid $brand-info;
                     }
                 }
-
                 &.active > a {
-                    border-bottom: .5rem solid $navbar-inverse-link-active-color;
-
+                    //border-bottom: 1rem solid $navbar-inverse-link-active-color;
                     &,
                     &:focus,
                     &:hover {
-                        color: $navbar-inverse-link-active-color;
                         background-color: transparent;
+                        color: $navbar-inverse-link-active-color;
                         cursor: default;
+                    }
+                    .nav-link-hilite {
+                        border-radius: 15px;
+                        border-top: 15px solid $body-bg;
+                        display: block;
+                        position: relative;
+                        bottom: -10px;
+                        //width: 100%;
                     }
                 }
             }
         }
     }
-
     &.scrolled {
-        box-shadow: 0 .05rem 1rem $gray-light;
-        opacity: .9;
+        box-shadow: 0 0.05rem 1rem $gray-light;
+        opacity: 0.9;
     }
+    .navbar-form {
+        padding-top: 5px;
+    }
+}
+.carousel {
+    height: 350px;
+    margin-bottom: 60px;
+    color: $brand-primary;
+    .carousel-control.left,
+    .carousel-control.right {
+        background: 0;
+    }
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 350px;
+    background-color: $brand-info;
+}
+.carousel-inner > .item > img {
+    display: inline;
+    vertical-align: middle;
+    height: 100%
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //min-width: 100%;
+    //height: 300px;
+}
+.fake {
+    height: 100%;
+    width: 100%;
+}
+.carousel-control .control-left,
+.carousel-control .control-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+.carousel-control .control-left {
+    left: 50%;
+}
+.carousel-control .control-right {
+    right: 50%;
 }

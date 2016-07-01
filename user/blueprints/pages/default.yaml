@@ -156,6 +156,12 @@ form:
                       type: text
                       label: PLUGIN_ADMIN.BODY_CLASSES
 
+                    header.icon:
+                      type: text
+                      label: Icon
+                      help: 'Font Awesome Icon'
+
+
 
                 column2:
                   type: column
