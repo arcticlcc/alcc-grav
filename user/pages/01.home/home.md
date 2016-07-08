@@ -4,14 +4,13 @@ icon: house
 visible: false
 ---
 
-[g-what-we-do name="what_we_do" attributes="class:what-we-do module" column_attributes="class:col-md-12"]
-
 ## Explain Stuff
 ___
+[g-what-we-do name="what_we_do" attributes="class:what-we-do module" column_attributes="class:col-md-12"]
 
 [g-what-we-do-item attributes="class:col-md-4"]
 
-<div class="item-icon">
+<div class="item-icon text-hill">
 [g-icon icon="tree fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -19,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 [/g-what-we-do-item]
 
 [g-what-we-do-item attributes="class:col-md-4"]
-<div class="item-icon">
+<div class="item-icon text-tundra">
 [g-icon icon="users fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -28,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [g-what-we-do-item attributes="class:col-md-4"]
 
-<div class="item-icon">
+<div class="item-icon text-water">
 [g-icon icon="database fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -36,19 +35,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [/g-what-we-do]
 
-[g-clients name=clients attributes="class:clients module"]
-
 ## Show Partner Logos
 ___
-
-[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-md-3"][/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-md-3"][/g-clients-item]
-
-
+[g-clients name=clients attributes="class:clients module"]
+[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
+[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
 [/g-clients]

@@ -1,20 +1,18 @@
 // REQUIRED DEPENDENCIES - DO NOT CHANGE
 
 // Load Third Party Libraries
-@import 'vendor/bourbon/bourbon';
+//@import 'vendor/bourbon/bourbon';
 
-@import 'theme/mixins/breakpoints';
-
+//@import 'theme/mixins/breakpoints';
 @import 'theme/bootswatch/variables';
 @import '../../../../vendor/twbs/bootstrap-sass/assets/stylesheets/bootstrap';
 //-------------------------------------------
 
 // THEME COMPONENTS
-@import 'theme/variables';
+//@import 'theme/variables';
 @import 'theme/bootswatch/bootswatch';
 
 //@import 'theme/typography';
-
 
 //@import 'theme/default';
 

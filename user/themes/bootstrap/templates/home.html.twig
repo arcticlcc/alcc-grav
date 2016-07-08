@@ -2,7 +2,9 @@
 
 {% block content %}
     <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="row">
+
+        <div id="myCarousel" class="carousel slide well col-md-6" data-ride="carousel" data-interval="false">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -15,7 +17,10 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h4>An example headline.</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas
+                            eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies
+                            vehicula ut id elit.</p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
                             </p>
@@ -27,7 +32,10 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h4>Another example headline.</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas
+                            eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies
+                            vehicula ut id elit.</p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
                             </p>
@@ -39,7 +47,10 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h4>One more for good measure.</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas
+                            eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies
+                            vehicula ut id elit.</p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a>
                             </p>
@@ -49,18 +60,28 @@
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="control-left fa-stack fa-lg">
-                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-angle-left fa-stack-1x"></i>
                 </span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
                 <span class="control-right fa-stack fa-lg">
-                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-angle-right fa-stack-1x"></i>
                 </span>
             </a>
         </div>
+        <div class="col-md-6">
+          <p class="lead">Ex sit velit ex voluptate ut excepteur aliquip proident. Qui aliqua
+          est aliquip nostrud aliqua esse cupidatat cupidatat ipsum magna minim.
+          Qui culpa non cupidatat occaecat aliqua officia id non consectetur
+          excepteur qui sint reprehenderit Lorem. Sit ipsum anim dolore tempor
+          laboris sunt nulla esse aliquip adipisicing consequat veniam laborum
+          reprehenderit eiusmod adipisicing dolor. Labore ullamco est magna
+          incididunt ipsum est aute laborum.</p>
+        </div>
+      </div>
         {{ page.content }}
     </div>
 {% endblock %}

@@ -1,108 +1,82 @@
-<nav
-    class="main-navbar navbar navbar-inverse navbar-fixed-top {{ page.route == '/' ? 'home' : '' }}"
-    role="navigation">
-
-    <div class="navbar-wrapper">
-        <div class="container">
-            <span class="title">Arctic
-                <span
-                    style="
-                color: #8DA247;
-                font-weight: 500;
-            ">L</span>andscape
-                <span
-                    style="
-                color: #A9AC64;
-                font-weight: 500;
-            ">C</span>onservation
-                <span
-                    style="
-                color: #66B8B8;
-                font-weight: 500;
-            ">C</span>ooperative</span>
-            <div class="navbar-header">
-                <button
-                    type="button"
-                    class="navbar-toggle"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
-                    <span class="brand-wrapper">
-                        <img src="{{ url('theme://images/logo_icon.png') }}" alt="Brand"/>
-                    </span>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    {% for page in pages.children.visible %}
-                        {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                        {% if config.themes.bootstrap.dropdown.enabled and page.children.visible.count >
-                        0 %}
-                            <li class="dropdown {{ current_page }}">
-                                <a
-                                    href="#"
-                                    class="dropdown-toggle"
-                                    data-toggle="dropdown"
-                                    role="button"
-                                    aria-expanded="false">{{ page.menu }}
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    {% set current_parent = page.active ? 'active' : '' %}
-                                    <li class="{{ current_parent }}">
-                                        <a href="{{ page.url }}">{{ page.menu }}</a>
+<nav class="main-navbar navbar navbar-inverse navbar-fixed-top {{ page.route == '/' ? 'home' : '' }}" role="navigation">
+    <div class="container">
+        <span class="title">Arctic
+            <span class="text-tundra-light">L</span>andscape
+            <span class="text-tundra">C</span>onservation
+            <span class="text-water">C</span>ooperative</span>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
+                <span class="brand-wrapper">
+                    <img src="{{ url('theme://images/logo_icon.png') }}" alt="Brand"/>
+                </span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                {% for page in pages.children.visible %}
+                    {% set current_page = (page.active or page.activeChild)
+                        ? 'active'
+                        : '' %}
+                    {% if config.themes.bootstrap.dropdown.enabled and page.children.visible.count > 0 %}
+                        <li class="dropdown {{ current_page }}">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ page.menu }}
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                {% set current_parent = page.active
+                                    ? 'active'
+                                    : '' %}
+                                <li class="{{ current_parent }}">
+                                    <a href="{{ page.url }}">{{ page.menu }}</a>
+                                </li>
+                                <li class="divider"></li>
+                                {% for child in page.children.visible %}
+                                    {% set current_child = (child.active or child.activeChild)
+                                        ? 'active'
+                                        : '' %}
+                                    <li class="{{ current_child }}">
+                                        <a href="{{ child.url }}">{{ child.menu }}</a>
                                     </li>
-                                    <li class="divider"></li>
-                                    {% for child in page.children.visible %}
-                                        {% set current_child = (child.active or child.activeChild) ? 'active' : '' %}
-                                        <li class="{{ current_child }}">
-                                            <a href="{{ child.url }}">{{ child.menu }}</a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% else %}
-                            <li class="{{ current_page }}">
-                                <a href="{{ page.url }}">
-                                    <span class="fa fa-{{ page.header.icon }}"></span>
-                                    {{ page.menu }}
-                                    <span class="nav-link-hilite"></span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    {% for mitem in site.menu %}
-                        <li>
-                            <a href="{{ mitem.url }}">{{ mitem.text }}</a>
+                                {% endfor %}
+                            </ul>
                         </li>
-                    {% endfor %}
-
-                    {% if config.plugins.login.enabled and grav.user.username %}
-                        <li>
-                            <i class="fa fa-lock"></i>
-                            {% include 'partials/login-status.html.twig' %}</li>
+                    {% else %}
+                        <li class="{{ current_page }}">
+                            <a href="{{ page.url }}">
+                                <span class="fa fa-{{ page.header.icon }}"></span>
+                                {{ page.menu }}
+                                <span class="nav-link-hilite"></span>
+                            </a>
+                        </li>
                     {% endif %}
-                    <li class="search">
-                        <form action="" class="search-form navbar-form navbar-right" role="search">
-                            <div class="form-group has-feedback">
-                                <label for="search" class="sr-only">Search</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    name="search"
-                                    id="search"
-                                    placeholder="search">
-                                <span class="fa fa-search form-control-expand"></span>
-                            </div>
-                        </form>
+                {% endfor %}
+                {% for mitem in site.menu %}
+                    <li>
+                        <a href="{{ mitem.url }}">{{ mitem.text }}</a>
                     </li>
-                </ul>
-            </div>
+                {% endfor %}
+
+                {% if config.plugins.login.enabled and grav.user.username %}
+                    <li>
+                        <i class="fa fa-lock"></i>
+                        {% include 'partials/login-status.html.twig' %}</li>
+                {% endif %}
+                <li class="search">
+                    <form action="" class="search-form navbar-form navbar-right" role="search">
+                        <div class="form-group has-feedback">
+                            <label for="search" class="sr-only">Search</label>
+                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                            <span class="fa fa-search form-control-expand"></span>
+                        </div>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
