@@ -6195,6 +6195,8 @@ body {
 
 .carousel {
   color: #336699; }
+  .carousel .carousel-control {
+    display: none; }
   .carousel .carousel-control.left,
   .carousel .carousel-control.right {
     background: 0; }
@@ -6211,7 +6213,9 @@ body {
         margin-top: 0;
         position: absolute; }
       .carousel .item {
-        height: 350px; } }
+        height: 350px; }
+      .carousel .carousel-control {
+        display: block; } }
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.58);
@@ -6304,5 +6308,13 @@ body .footer {
   margin-top: 3rem;
   color: #fff;
   font-size: 1.5rem; }
+
+.home-intro {
+  background-color: #f7f9f1;
+  border-color: #edf2df;
+  min-height: 390px;
+  font-size: 1.1em; }
+  .home-intro .img-responsive {
+    width: 50%; }
 
 /*# sourceMappingURL=theme.css.map */

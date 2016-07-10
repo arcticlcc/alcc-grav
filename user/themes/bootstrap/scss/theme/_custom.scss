@@ -212,6 +212,10 @@ body {
     //margin-bottom: 60px;
     color: $brand-primary;
 
+    .carousel-control {
+        display: none;
+    }
+
     .carousel-control.left,
     .carousel-control.right {
         background: 0;
@@ -230,6 +234,10 @@ body {
         /* Declare heights because of positioning of img element */
         .item {
             height: 350px;
+        }
+
+        .carousel-control {
+            display: block;
         }
     }
 }
@@ -355,4 +363,15 @@ body .footer {
     margin-top: 3rem;
     color: $body-bg;
     font-size: 1.5rem;
+}
+
+.home-intro {
+    background-color: lighten($brand-tundra-light,30);
+    border-color: lighten($brand-tundra-light,25);
+    min-height: 390px;
+    font-size: 1.1em;
+
+    .img-responsive {
+        width: 50%;
+    }
 }

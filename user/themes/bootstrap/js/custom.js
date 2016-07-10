@@ -14,33 +14,32 @@
  *
  */
 
-/*** CREDITS
-This code is based on https://github.com/getgrav/grav-theme-antimatter/blob/develop/js/antimatter.js from Rocket Team's Antimatter theme
- ***/
-
-// The selector to apply the effect
-var selector = ".navbar";
-// The value, when reached, activates the effect
-var scrolledAt = 100;
-
-var isTouch = window.DocumentTouch && document instanceof DocumentTouch;
-
-function scrollHeader() {
-    // Has scrolled class on header
-    var zvalue = $(document)
-        .scrollTop();
-    if(zvalue > scrolledAt) {
-        $(selector)
-            .addClass("scrolled");
-    } else {
-        $(selector)
-            .removeClass("scrolled");
-    }
-}
-
 jQuery(document)
     .ready(function ($) {
 
+        /*** CREDITS
+        The scroll code is based on https://github.com/getgrav/grav-theme-antimatter/blob/develop/js/antimatter.js from Rocket Team's Antimatter theme
+         ***/
+
+        // The selector to apply the effect
+        var selector = ".navbar";
+        // The value, when reached, activates the effect
+        var scrolledAt = 100;
+
+        var isTouch = window.DocumentTouch && document instanceof DocumentTouch;
+
+        function scrollHeader() {
+            // Has scrolled class on header
+            var zvalue = $(document)
+                .scrollTop();
+            if(zvalue > scrolledAt) {
+                $(selector)
+                    .addClass("scrolled");
+            } else {
+                $(selector)
+                    .removeClass("scrolled");
+            }
+        }
         // ON SCROLL EVENTS
         if(!isTouch) {
             $(document)
@@ -58,6 +57,30 @@ jQuery(document)
             });
 
         //search button
+        jQuery(document)
+            .ready(function ($) {
+                var input = $('[data-search-input]');
+                var minChars = 3;
+
+                input.on('keypress', function (event) {
+                    if(event.which == 13) {
+                        event.preventDefault();
+
+                        var val = $(this)
+                            .val();
+                        if(val
+                            .length >= minChars) {
+                            window.location.href = input.data(
+                                    'search-input') + ':' +
+                                val;
+                        } else {
+                            input.attr('placeholder',
+                                'Minimum ' + minChars +
+                                ' characters.');
+                        }
+                    }
+                });
+            });
         $('.form-control-expand')
             .on('click', function () {
                 var nb = $('.navbar .search-form .form-group');
