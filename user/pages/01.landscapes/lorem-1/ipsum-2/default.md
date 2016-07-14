@@ -1,4 +1,4 @@
 ---
-title: 'Ipsum 1'
+title: 'Ipsum 2'
 visible: true
 ---

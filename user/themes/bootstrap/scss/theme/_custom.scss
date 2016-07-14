@@ -18,7 +18,17 @@ $navbar-gradient-top: lighten($gray-dark,7);
 }
 
 body {
-    padding-top: 115px;
+    @media (min-width: $grid-float-breakpoint) {
+        padding-top: 115px;
+    }
+
+    .footer {
+        background-color: lighten($gray-dark, 7);
+        color: $body-bg;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        padding: 2rem;
+    }
 }
 
 .text-hill {
@@ -44,10 +54,6 @@ body {
 .container {
     @media (max-width: $screen-md-min) {
         width: 100%;
-
-        .search {
-            min-width: 3rem !important;
-        }
     }
 }
 
@@ -60,6 +66,7 @@ body {
 
     .search {
         min-height: 1px; //IE hack
+        min-width: 3rem;
     }
 
     .navbar-nav {
@@ -159,8 +166,13 @@ body {
 
     .navbar-nav {
         @media (min-width: $grid-float-breakpoint) {
+            .search {
+                float: right;
+                position: static;
+            }
+
             > li {
-                margin: 0 1rem;
+                margin: 0;
                 min-width: 10rem;
                 text-align: center;
 
@@ -277,6 +289,7 @@ body {
                             font-size: $font-size-base - 2;
                             font-weight: 500;
                             text-decoration: none;
+                            padding: 12px 5px;
 
                             &:focus,
                             &:hover {
@@ -458,14 +471,6 @@ body {
             font-size: 14px;
         }
     }
-}
-
-body .footer {
-    padding: 2rem;
-    background-color: rgb(69, 69, 69);
-    margin-top: 3rem;
-    color: $body-bg;
-    font-size: 1.5rem;
 }
 
 .home-intro {

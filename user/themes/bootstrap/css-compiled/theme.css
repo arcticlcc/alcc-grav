@@ -6067,8 +6067,15 @@ input[type="radio"] {
 .modal .close {
   color: #222222; }
 
-body {
-  padding-top: 115px; }
+@media (min-width: 768px) {
+  body {
+    padding-top: 115px; } }
+body .footer {
+  background-color: #454545;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  padding: 2rem; }
 
 .text-hill {
   color: #8da247; }
@@ -6087,16 +6094,15 @@ body {
 
 @media (max-width: 992px) {
   .container {
-    width: 100%; }
-    .container .search {
-      min-width: 3rem !important; } }
+    width: 100%; } }
 
 .main-navbar.navbar {
   min-height: 60px; }
   .main-navbar.navbar .title {
     display: none; }
   .main-navbar.navbar .search {
-    min-height: 1px; }
+    min-height: 1px;
+    min-width: 3rem; }
   .main-navbar.navbar .navbar-nav {
     margin: 0 -15px; }
   .main-navbar.navbar .navbar-toggle {
@@ -6165,8 +6171,11 @@ body {
         .main-navbar.navbar .navbar-brand img {
           height: 80px; } }
   @media (min-width: 768px) {
+    .main-navbar.navbar .navbar-nav .search {
+      float: right;
+      position: static; }
     .main-navbar.navbar .navbar-nav > li {
-      margin: 0 1rem;
+      margin: 0;
       min-width: 10rem;
       text-align: center; }
       .main-navbar.navbar .navbar-nav > li > a {
@@ -6216,7 +6225,7 @@ body {
         display: block;
         font-size: 0;
         margin: 0 10%;
-        min-width: 600px;
+        min-width: 540px;
         opacity: 0;
         padding-bottom: 2rem;
         top: 58px;
@@ -6226,14 +6235,15 @@ body {
         .main-navbar.navbar .navbar-nav > li .dropdown-menu.columns-1 {
           min-width: auto; }
         .main-navbar.navbar .navbar-nav > li .dropdown-menu.columns-2 {
-          min-width: 400px; }
+          min-width: 360px; }
         .main-navbar.navbar .navbar-nav > li .dropdown-menu li {
-          min-width: 200px; }
+          min-width: 180px; }
           .main-navbar.navbar .navbar-nav > li .dropdown-menu li a {
             color: #336699;
             font-size: 13px;
             font-weight: 500;
-            text-decoration: none; }
+            text-decoration: none;
+            padding: 12px 5px; }
             .main-navbar.navbar .navbar-nav > li .dropdown-menu li a:focus, .main-navbar.navbar .navbar-nav > li .dropdown-menu li a:hover {
               background-color: inherit;
               color: #336699;
@@ -6357,13 +6367,6 @@ body {
         color: #3596e0;
         left: initial;
         font-size: 14px; } }
-
-body .footer {
-  padding: 2rem;
-  background-color: #454545;
-  margin-top: 3rem;
-  color: #fff;
-  font-size: 1.5rem; }
 
 .home-intro {
   background-color: #f7f9f1;
