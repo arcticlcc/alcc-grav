@@ -1,0 +1,82 @@
+.carousel {
+    //height: 390px;
+    //margin-bottom: 60px;
+    color: $brand-primary;
+
+    .carousel-control {
+        display: none;
+    }
+
+    .carousel-control.left,
+    .carousel-control.right {
+        background: 0;
+    }
+    @media (max-width: $screen-md-min) {
+        border-radius: 0;
+    }
+    @media (min-width: 480px) {
+        height: 390px;
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+            bottom: 50px;
+            margin-top: 0;
+            position: absolute;
+        }
+        /* Declare heights because of positioning of img element */
+        .item {
+            height: 350px;
+        }
+
+        .carousel-control {
+            display: block;
+        }
+    }
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.58);
+    border-radius: 25px;
+    margin-top: 1rem;
+    padding: 10px;
+    position: static;
+    z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+//.carousel .item {
+//height: 350px;
+//}
+.carousel-inner > .item > img {
+    display: inline;
+    vertical-align: middle;
+    //height: 300px;
+    //min-width: 100%;
+    //left: 0;
+    //top: 0;
+    //position: absolute;
+    width: 100%;
+}
+
+.fake {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-control .control-left,
+.carousel-control .control-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+
+    .fa-circle {
+        color: $brand-primary;
+    }
+}
+
+.carousel-control .control-left {
+    left: 50%;
+}
+
+.carousel-control .control-right {
+    right: 50%;
+}

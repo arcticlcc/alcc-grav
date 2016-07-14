@@ -42,8 +42,20 @@
         {% block pagination %}{% endblock %}
 
         <div class="footer">
-            <div class="container">
-                <p class="text-muted">This is the <strong>Footer</strong></p>
+            <div class="container-fluid">
+                <div class="logo media">
+                    <div class="media-left">
+
+                    <img class="img-rounded" src="{{ url('theme://images/logo_full.png') }}" alt="Logo"/>
+                    </div>
+                    <div class="media-body"><h2>
+                    Arctic <br>
+                        <span class="text-tundra-light">L</span>andscape <br>
+                        <span class="text-tundra-light">C</span>onservation <br>
+                        <span class="text-water">C</span>ooperative <br>
+                    </h2>
+                    </div>
+                </div>
                 <hr>
                 {{ contacts }}
             </div>

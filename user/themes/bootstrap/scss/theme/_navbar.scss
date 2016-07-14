@@ -1,0 +1,451 @@
+.main-navbar.navbar {
+    min-height: $navbar-height * .6;
+    position: static;
+
+    .navbar-collapse {
+        max-height: none;
+    }
+
+    .title {
+        display: none;
+        font-family: sans-serif;
+        font-variant: small-caps;
+        font-weight: 100;
+        font-size: .9em;
+        line-height: 18px;
+        @media (min-width: 540px) {
+            font-size: 1.2em;
+            line-height: 36px;
+
+            br {
+                display: none;
+            }
+
+        }
+    }
+
+    .social-links {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+
+        a {
+            color: $navbar-inverse-link-color;
+            transition: color .5s ease;
+
+            &:hover {
+                color: $brand-tundra;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .search {
+        min-height: 1px; //IE hack
+        min-width: 3rem;
+
+        .navbar-form.search-form {
+            margin-left: 0;
+            margin-right: 0;
+            padding: $nav-link-padding;
+
+            span.form-control-expand {
+                @media (max-width: $grid-float-breakpoint) {
+                    display: none !important;
+                }
+            }
+            @media (min-width: $grid-float-breakpoint) {
+                padding-top: 5px;
+                position: absolute;
+                right: 5px;
+
+                .form-group {
+                    float: right !important;
+                    transition: all .35s, border-radius 0s;
+                    width: 32px;
+                    height: 32px;
+                    background-color: $body-bg;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+                    border-radius: 6px;
+                    border: 1px solid $gray-lighter;
+                }
+
+                .form-group input.form-control {
+                    padding-right: 25px;
+                    border: 0 none;
+                    background: transparent;
+                    box-shadow: none;
+                    opacity: 0;
+                    pointer-events: none;
+                    width: 500px;
+                }
+                //.search-form .form-group:hover
+                .form-group.hover {
+                    width: 100%;
+                    border-radius: 4px 6px 4px 4px;
+
+                    input.form-control {
+                        pointer-events: all;
+                        opacity: 1;
+                        transition: all 1.75s ease;
+                    }
+                }
+
+                input:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0 1000px #ffffff inset!important;
+                    //border-radius: 8px;
+                }
+
+                .form-group span.form-control-expand {
+                    position: absolute;
+                    top: -1px;
+                    right: -2px;
+                    z-index: 1000;
+                    display: block;
+                    width: 34px;
+                    height: 34px;
+                    line-height: 34px;
+                    text-align: center;
+                    color: $brand-primary;
+                    left: initial;
+                    font-size: 14px;
+                    transition: color .5s ease;
+
+                    &:hover {
+                        color: $brand-tundra;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-nav {
+        margin: 0 (-$navbar-padding-horizontal);
+    }
+
+    .navbar-toggle {
+        @include navbar-vertical-align(34px);
+        margin-top: ((($navbar-height * .6) - 34px) / 2);
+        margin-bottom: ((($navbar-height * .6) - 34px) / 2);
+    }
+
+    .navbar-brand {
+        padding: 8px $navbar-padding-horizontal;
+        //font-size: $font-size-large;
+        line-height: $line-height-computed;
+        height: $navbar-height * .6;
+
+        .brand-wrapper {
+            //@include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
+            @include transition(all 1s ease);
+            //border-radius: 10px;
+            //display: inline-block;
+            //padding: 2px;
+            &:hover {
+                background: $body-bg;
+            }
+        }
+
+        img {
+            //border: 2px solid $navbar-inverse-bg;
+            //border-radius: 7px;
+            height: $navbar-height * .4;
+            //&:focus,
+            //&:hover {
+            //    border: 0;
+            //}
+        }
+    }
+    @media (min-width: $grid-float-breakpoint) {
+         @include gradient-vertical-stripe($color: $navbar-gradient-alt);
+        position: fixed;
+
+        &.home {
+            @include gradient-vertical-stripe();
+
+            .navbar-brand .brand-wrapper {
+                background: $body-bg;
+            }
+        }
+
+        .container {
+            //background-color: $brand-info;
+            //padding: .5rem 8rem 0;
+            .title {
+                color: $body-bg;
+                display: inline-block;
+                font-size: 1.4em;
+                line-height: $navbar-gradient * .8;
+                margin-left: 1rem;
+                padding: 10px 15px 0;
+                @media (max-width: $screen-md-min) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .navbar-brand {
+            padding: 8px $navbar-padding-horizontal;
+            font-size: $font-size-large;
+            line-height: $line-height-computed;
+            height: $navbar-height;
+
+            .brand-wrapper {
+                @include gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient - 8, $color: $navbar-gradient-alt);
+                @include transition(all 1s ease);
+                border-radius: 10px;
+                display: inline-block;
+                padding: 2px;
+
+                &:hover {
+                    background: $body-bg;
+                }
+            }
+
+            img {
+                //border: 2px solid $navbar-inverse-bg;
+                //border-radius: 7px;
+                height: $navbar-gradient * 2;
+                //&:focus,
+                //&:hover {
+                //    border: 0;
+                //}
+            }
+        }
+    }
+
+    .navbar-nav {
+        li.open {
+            .caret {
+                border-top: 0;
+                border-bottom: $caret-width-base dashed;
+                border-bottom: $caret-width-base solid \9; // IE8
+                content: '';
+            }
+        }
+        @media (max-width: $grid-float-breakpoint) {
+            li {
+                &.open .dropdown-menu > .active > a,
+                a {
+                    &,
+                    &.active,
+                    &:focus {
+                        background-color: transparent;
+                    }
+
+                    &:hover {
+                        background-color: $navbar-inverse-link-hover-bg;
+                        text-decoration: none;
+                    }
+                }
+
+                &.dropdown li {
+                    padding: 0;
+
+                    &.divider {
+                        display: none;
+                    }
+
+                    a {
+                        font-size: $font-size-base - 1;
+                        color: $navbar-inverse-link-color;
+                        padding: 10px 15px 10px 60px;
+                        display: block;
+                        clear: both;
+                        line-height: $line-height-computed;
+                        white-space: nowrap;
+
+                        &,
+                        strong {
+                            font-weight: 500;
+                        }
+
+                    }
+                }
+
+                ul.dropdown-menu {
+                    background-color: lighten($navbar-inverse-bg, 7%);
+
+                    li > a {
+                        border-bottom: 1px solid darken($navbar-inverse-bg, 1%);
+                    }
+
+                    > li:first-child a {
+                        padding-left: 30px;
+                    }
+
+                    > li > a {
+                        padding-left: 45px;
+                    }
+                }
+            }
+        }
+        @media (min-width: $grid-float-breakpoint) {
+            .search {
+                float: right;
+                @media (max-width: $screen-lg-min) {
+                    position: static;
+                }
+            }
+
+            > li {
+                margin: 0;
+                min-width: 10rem;
+                text-align: center;
+
+                > a {
+                    background-color: transparent;
+                    padding-bottom: 0; //$navbar-padding-vertical / 1.5;
+                    padding-top: $navbar-padding-vertical / 2;
+                    @include transition(all .5s ease);
+
+                    &.active.dropdown-toggle:focus,
+                    &.active.dropdown-toggle:hover,
+                    &:focus,
+                    &:hover {
+                        color: $brand-tundra;
+                        background-color: transparent;
+
+                        //border-bottom: .5rem solid $brand-info;
+                    }
+                }
+
+                &.active > a {
+                    //border-bottom: 1rem solid $navbar-inverse-link-active-color;
+                    &,
+                    &:focus,
+                    &:hover {
+                        background-color: transparent;
+                        color: $navbar-inverse-link-active-color;
+                        cursor: default;
+
+                        .fa {
+                            //color: $brand-tundra;
+                        }
+                    }
+                }
+
+                .nav-link-hilite {
+                    display: block;
+                    position: relative;
+                }
+
+                &.dropdown a.dropdown-toggle:focus,
+                &.dropdown a.dropdown-toggle:hover {
+                    color: $brand-tundra;
+                    cursor: pointer;
+                }
+
+                &.dropdown.open {
+                    .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    .nav-link-hilite {
+                        .dropdown-pointer {
+                            &,
+                            &:before {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+
+                .dropdown-pointer {
+                    margin-top: -11px;
+
+                    &,
+                    &:before {
+                        border: 14px solid transparent;
+                        border-bottom: 14px solid $brand-tundra;
+                        content: '';
+                        left: 50%;
+                        opacity: 0;
+                        visibility: hidden;
+                        position: absolute;
+                        top: 0;
+                        transition: all .5s ease;
+                        z-index: 1001;
+                    }
+
+                    &:before {
+                        border-bottom-color: white;
+                        margin-top: -8px;
+                        margin-left: -14px;
+                    }
+                }
+
+                .dropdown-menu {
+                    background-color: $body-bg;
+                    border-top: 5px solid $brand-tundra;
+                    color: $text-color;
+                    display: block;
+                    visibility: hidden;
+                    font-size: 0;
+                    margin: 0 10%;
+                    //max-width: 75%;
+                    min-width: $navbar-drop-column-width * 3;
+                    opacity: 0;
+                    padding-bottom: 2rem;
+                    //position: fixed;
+                    top: ($navbar-height * .6) - 2;
+                    transition: all 1s ease;
+                    @include box-shadow(3px 3px 6px rgba(0,0,0,.525));
+
+                    &.columns-1 {
+                        min-width: auto;
+                    }
+
+                    &.columns-2 {
+                        min-width: $navbar-drop-column-width * 2;
+                    }
+
+                    li {
+                        min-width: $navbar-drop-column-width;
+
+                        a {
+                            color: $link-color;
+                            font-size: $font-size-base - 2;
+                            font-weight: 500;
+                            text-decoration: none;
+                            padding: 12px 5px;
+
+                            &:focus,
+                            &:hover {
+                                background-color: inherit;
+                                color: $link-hover-color;
+                                text-decoration: $link-hover-decoration;
+                            }
+                        }
+                    }
+
+                    .active a {
+                        background-color: inherit;
+                    }
+
+                    .divider {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        @media (min-width: $screen-md-min) {
+            > li {
+                margin: 0 2rem;
+            }
+        }
+    }
+
+    &.scrolled {
+      @media (min-width: $grid-float-breakpoint) {
+        box-shadow: 0 .05rem 1rem $gray-light;
+        //opacity: .9;
+
+      }
+        &:hover {
+          opacity: 1;
+        }
+    }
+}
