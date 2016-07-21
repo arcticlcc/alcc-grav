@@ -15,16 +15,31 @@ This website is made with [Grav CMS](http://getgrav.org/) and it is powered by [
 
 [/g-footer-one]
 
-[g-contacts name=contacts attributes="class:module contacts" info_attributes="class:col-md-4" form_attributes="class:col-md-8" render=false]
+[g-contacts name=contacts attributes="class:module contacts" info_attributes="class:col-md-4" form_attributes="class:col-md-7 col-md-offset-1" render=false]
 
 [g-section name="form"]
-##### Get in touch
+### Get in touch
 Need some information? Ask us a question filling the form below
 
 [g-simple-form token="xxxxx" redirect_to="/thank-you-for-my-page" render=true][/g-simple-form]
 [/g-section]
 
 [g-section name="info"]
+<div class="logo media">
+    <div class="media-left">
+
+    <img class="img-rounded" src="/user/themes/bootstrap/images/logo_full.png" alt="Logo"/>
+    </div>
+    <div class="media-body"><h2>
+    Arctic <br>
+        <span class="text-tundra-light">L</span>andscape <br>
+        <span class="text-tundra-light">C</span>onservation <br>
+        <span class="text-water">C</span>ooperative <br>
+    </h2>
+    </div>
+</div>
+<hr>
+
 #####OFFICE
 
 ___Anchorage___  
