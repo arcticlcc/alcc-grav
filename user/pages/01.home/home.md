@@ -4,16 +4,18 @@ icon: house
 visible: false
 ---
 
-## Explain Stuff
+## Explore
 ___
 [g-what-we-do name="what_we_do" attributes="class:what-we-do module" column_attributes="class:col-md-12"]
 
 [g-what-we-do-item attributes="class:col-md-4"]
 
 <div class="item-icon text-hill">
-[g-icon icon="tree fa-5x" icon_type="fontawesome"][/g-icon]
+[g-icon icon="image fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Landscapes
+Explore our world! Find out how we're involved with conservation across the
+Arctic - in geographies large and small. Use an our interactive map to visualize the
 
 [/g-what-we-do-item]
 
@@ -21,7 +23,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="item-icon text-tundra">
 [g-icon icon="users fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Community
+Explore how the we're engaging stakeholders in the Arctic. From scientists and land managers to indigenous communities, our goal is to support and build partnerships for Arctic conservation.
 
 [/g-what-we-do-item]
 
@@ -30,20 +33,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="item-icon text-water">
 [g-icon icon="database fa-5x" icon_type="fontawesome"][/g-icon]
 </div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Catalog
+Looking for Arctic LCC Projects or Products? Use the Catalog to search and explore
+our science and what we've been building.
 [/g-what-we-do-item]
 
 [/g-what-we-do]
-
-## Show Partner Logos
-___
-[g-clients name=clients attributes="class:clients module"]
-[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[g-clients-item image="rect6951-5.png" attributes="class:col-xs-4 col-md-3"] [/g-clients-item]
-[/g-clients]
