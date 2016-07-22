@@ -1,6 +1,4 @@
-<nav
-    class="main-navbar navbar navbar-inverse navbar-fixed-top {{ page.route == '/' ? 'home' : '' }}"
-    role="navigation">
+<nav class="main-navbar navbar navbar-inverse navbar-fixed-top {{ page.route == '/' ? 'home' : '' }}" role="navigation">
     <div class="container">
         <div class="title">Arctic
             <span class="text-tundra-light-">L</span>andscape
@@ -26,11 +24,7 @@
             </div>
         </div>
         <div class="navbar-header text-center">
-            <button
-                type="button"
-                class="navbar-toggle"
-                data-toggle="collapse"
-                data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -48,16 +42,12 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% for page in pages.children.visible %}
-                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                    {% if config.themes.bootstrap.dropdown.enabled and page.children.visible.count >
-                    0 %}
+                    {% set current_page = (page.active or page.activeChild)
+                        ? 'active'
+                        : '' %}
+                    {% if config.themes.bootstrap.dropdown.enabled and page.children.visible.count > 0 %}
                         <li class="dropdown {{ current_page }}">
-                            <a
-                                href="#"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <span class="fa fa-{{ page.header.icon }} fa-fw"></span>
                                 {{ page.menu }}
                                 <span class="caret"></span>
@@ -65,55 +55,57 @@
                                     <i class="dropdown-pointer"></i>
                                 </span>
                             </a>
-                            <ul
-                                class="dropdown-menu row list-unstyled columns-{{ page.children.visible.count }}"
-                                role="menu">
-                                {% set current_parent = page.active ? 'active' : '' %}
+                            <ul {% set columns = page.children.visible.count < 3 ? page.children.visible.count : 3 %} class="dropdown-menu row list-unstyled columns-{{ columns }}" role="menu">
+                                {% set current_parent = page.active
+                                    ? 'active'
+                                    : '' %}
                                 <li class="{{ current_parent }} col-md-12">
                                     <a href="{{ page.url }}">
                                         <span class="fa fa-{{ page.header.icon }} fa-fw"></span>{{ page.menu }}
                                     </a>
                                 </li>
                                 <li class="divider col-sm-12"></li>
-                                {% for child in page.children.visible %}
-                                    {% set current_child = (child.active or child.activeChild) ? 'active' : '' %}
-                                    <li class="{{ current_child }} col-sm-3">
-                                        <a href="{{ child.url }}">
-                                            <strong>{{ child.menu }}</strong>
-                                        </a>
-                                        {% if child.children.visible.count > 0 %}
-                                            <ul class="list-unstyled">
-                                                {% for grandchild in child.children.visible %}
-                                                    {% set current_child = (grandchild.active or grandchild.activeChild) ? 'active'
-                                                    : '' %}
-                                                    <li class="{{ current_child }}">
-                                                        <a href="{{ grandchild.url }}">{{ grandchild.menu }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                                    <li class="col-sm-3">
-                                        <div class="thumbnail">
-                                            <img
-                                                data-src="holder.js/100%x200"
-                                                alt="100%x200"
-                                                style="height: 200px; width: 100%; display: block;"
-                                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU2MGMzNGVkMzggdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTYwYzM0ZWQzOCI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
-                                                data-holder-rendered="true">
-                                            <div class="caption">
-                                                <h3>Thumbnail label</h3>
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
-                                                    non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula
-                                                    ut id elit.</p>
-                                                <p>
-                                                    <a href="#" class="btn btn-primary" role="button">Button</a>
-                                                    <a href="#" class="btn btn-default" role="button">Button</a>
-                                                </p>
-                                            </div>
+                                <li class="col-sm-12 col-lg-{{ columns * 3 }}">
+                                    <ul class="row">
+                                        {% for child in page.children.visible %}
+                                            {% set current_child = (child.active or child.activeChild)
+                                                ? 'active'
+                                                : '' %}
+                                            <li class="{{ current_child }} col-sm-4 col-lg-{{ 12 / columns }}">
+                                                <a href="{{ child.url }}">
+                                                    <strong>{{ child.menu }}</strong>
+                                                </a>
+                                                {% if child.children.visible.count > 0 %}
+                                                    <ul class="list-unstyled">
+                                                        {% for grandchild in child.children.visible %}
+                                                            {% set current_child = (grandchild.active or grandchild.activeChild)
+                                                                ? 'active'
+                                                                : '' %}
+                                                            <li class="{{ current_child }}">
+                                                                <a href="{{ grandchild.url }}">{{ grandchild.menu }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                            {% if loop.index is divisible by(3) %}
+                                                <li class="clearfix hidden-xs"></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="visible-lg-block col-lg-{{ 12 - columns * 3 - (3 - columns) }} preview">
+                                    <div class="thumbnail">
+                                        <img alt="" style="" src="{{ url('theme://images/logo_plain.png') }}" data-holder-rendered="true">
+                                        <div class="caption">
+                                            <h5>Highlighted Section</h5>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                                <a href="#">Read more...</a>
+                                            </p>
+                                            <p></p>
                                         </div>
-                                    </li>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
                     {% else %}
@@ -140,14 +132,7 @@
                     <form action="" class="search-form navbar-form navbar-right" role="search">
                         <div class="form-group has-feedback">
                             <label for="search" class="sr-only">Search</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="search"
-                                id="search"
-                                placeholder="search"
-                                value="{{ query }}"
-                                data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
+                            <input type="text" class="form-control" name="search" id="search" placeholder="search" value="{{ query }}" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
                             <span class="fa fa-search form-control-expand"></span>
                         </div>
                     </form>

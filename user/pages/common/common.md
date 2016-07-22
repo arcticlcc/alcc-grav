@@ -15,7 +15,7 @@ This website is made with [Grav CMS](http://getgrav.org/) and it is powered by [
 
 [/g-footer-one]
 
-[g-contacts name=contacts attributes="class:module contacts" info_attributes="class:col-md-4" form_attributes="class:col-md-7 col-md-offset-1" render=false]
+[g-contacts name=contacts attributes="class:module contacts" info_attributes="class:col-md-6 col-lg-5" form_attributes="class:col-md-5 col-md-offset-1" render=false]
 
 [g-section name="form"]
 ### Get in touch

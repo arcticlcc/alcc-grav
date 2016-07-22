@@ -1,4 +1,4 @@
 ---
-title: 'Story Map'
+title: 'Ipsum 1'
 visible: true
 ---

@@ -1,4 +1,4 @@
 ---
-title: 'Lorem 2'
+title: 'Small'
 visible: true
 ---

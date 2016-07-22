@@ -50,7 +50,7 @@
             padding: $nav-link-padding;
 
             span.form-control-expand {
-                @media (max-width: $grid-float-breakpoint) {
+                @media (max-width: $grid-float-breakpoint-max) {
                     display: none !important;
                 }
             }
@@ -223,7 +223,7 @@
                 content: '';
             }
         }
-        @media (max-width: $grid-float-breakpoint) {
+        @media (max-width: $grid-float-breakpoint-max) {
             li {
                 &.open .dropdown-menu > .active > a,
                 a {
@@ -396,21 +396,51 @@
 
                     &.columns-1 {
                         min-width: auto;
+                        li {
+                            min-width: $navbar-drop-column-width;
+                        }                        
                     }
 
                     &.columns-2 {
                         min-width: $navbar-drop-column-width * 2;
                     }
+                    @media (min-width: $screen-lg-min) {
+                        min-width: $navbar-drop-column-width * 4.5;
+
+                        &.columns-1 {
+                            min-width: $navbar-drop-column-width * 2.5;
+                        }
+
+                        &.columns-2 {
+                            min-width: $navbar-drop-column-width * 3.25;
+                        }
+                    }
+
+                    .preview {
+                        font-size: $font-size-small;
+                        min-width: $navbar-drop-column-width * 1.1;
+                        margin-top: 10px;
+                    }
+
+                    ul.row > li {
+                      margin-top: 10px;
+                    }
+
+                    > li:first-child > a {
+                        font-size: 2rem;
+                        padding: 12px 5px;
+                    }
 
                     li {
-                        min-width: $navbar-drop-column-width;
+                        //min-width: $navbar-drop-column-width;
 
                         a {
                             color: $link-color;
+                            display: inline-block;
                             font-size: $font-size-base - 2;
                             font-weight: 500;
                             text-decoration: none;
-                            padding: 12px 5px;
+                            padding: 3px;
 
                             &:focus,
                             &:hover {
@@ -439,13 +469,14 @@
     }
 
     &.scrolled {
-      @media (min-width: $grid-float-breakpoint) {
-        box-shadow: 0 .05rem 1rem $gray-light;
-        //opacity: .9;
+        @media (min-width: $grid-float-breakpoint) {
+            box-shadow: 0 .05rem 1rem $gray-light;
+            //opacity: .9;
 
-      }
+        }
+
         &:hover {
-          opacity: 1;
+            opacity: 1;
         }
     }
 }

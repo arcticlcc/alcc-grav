@@ -28,6 +28,11 @@ body {
         font-size: 1.5rem;
         margin-top: 3rem;
         padding: 2rem;
+
+        hr {
+          max-width: 400px;
+          margin-left: 0;
+        }
     }
 }
 

@@ -1,4 +1,4 @@
 ---
-title: 'Ipsum 2'
+title: 'Visualizing Change'
 visible: true
 ---
