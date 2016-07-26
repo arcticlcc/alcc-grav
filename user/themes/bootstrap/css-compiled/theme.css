@@ -6157,7 +6157,12 @@ body .footer {
     margin: 0 -15px; }
     .main-navbar.navbar .navbar-nav li.search {
       min-height: 1px;
-      min-width: 3rem; }
+      min-width: 1rem;
+      margin-left: 10rem; }
+      @media (max-width: 1300px) {
+        .main-navbar.navbar .navbar-nav li.search {
+          position: static;
+          margin-left: 0; } }
       .main-navbar.navbar .navbar-nav li.search .navbar-form.search-form {
         margin-left: 0;
         margin-right: 0;
@@ -6319,11 +6324,7 @@ body .footer {
         padding-left: 45px; } }
   @media (min-width: 768px) {
     .main-navbar.navbar .navbar-nav .search {
-      float: right; } }
-  @media (min-width: 768px) and (max-width: 1200px) {
-    .main-navbar.navbar .navbar-nav .search {
-      position: static; } }
-  @media (min-width: 768px) {
+      float: right; }
     .main-navbar.navbar .navbar-nav > li {
       margin: 0;
       min-width: 10rem;

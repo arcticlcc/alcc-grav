@@ -64,7 +64,12 @@ $navbar-gradient-top: lighten($gray-dark,7);
 
         li.search {
             min-height: 1px; //IE hack
-            min-width: 3rem;
+            min-width: 1rem;
+            margin-left: 10rem;
+            @media (max-width: $screen-lg-min + 100) {
+                position: static;
+                margin-left: 0;
+            }
 
             .navbar-form.search-form {
                 margin-left: 0;
@@ -309,9 +314,6 @@ $navbar-gradient-top: lighten($gray-dark,7);
         @media (min-width: $grid-float-breakpoint) {
             .search {
                 float: right;
-                @media (max-width: $screen-lg-min) {
-                    position: static;
-                }
             }
 
             > li {
@@ -450,7 +452,7 @@ $navbar-gradient-top: lighten($gray-dark,7);
                         }
 
                         li {
-                          //  min-width: $navbar-drop-column-width;
+                            //  min-width: $navbar-drop-column-width;
                         }
                     }
                     @media (min-width: $screen-lg-min) {
