@@ -1,3 +1,22 @@
+$navbar-gradient: floor(($navbar-height * .4)) !default;
+$navbar-gradient-alt: #9eac5f;
+$navbar-gradient-alt: #66B8B8;
+$navbar-gradient-alt: $body-bg;
+$navbar-gradient-top: lighten($gray-dark,7);
+@mixin gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient, $navbar-gradient-size: 3, $color: $body-bg) {
+    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$brand-info+40,ffffff+41,ffffff+44,207cca+45
+    // Old browsers
+    background: $navbar-gradient-top;
+    // FF3.6-15
+    background: -moz-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop, $color $navbar-gradient-stop +1, $navbar-gradient-stop + $navbar-gradient-size, $brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    // Chrome10-25,Safari5.1-6
+    background: -webkit-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+    background: linear-gradient(to bottom, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
+    //IE6-9
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0);
+}
+
 .main-navbar.navbar {
     min-height: $navbar-height * .6;
     position: static;
@@ -11,7 +30,7 @@
         font-family: sans-serif;
         font-variant: small-caps;
         font-weight: 100;
-        font-size: .9em;
+        font-size: .8em;
         line-height: 18px;
         @media (min-width: 540px) {
             font-size: 1.2em;
@@ -40,87 +59,87 @@
         }
     }
 
-    .search {
-        min-height: 1px; //IE hack
-        min-width: 3rem;
+    .navbar-nav {
+        margin: 0 (-$navbar-padding-horizontal);
 
-        .navbar-form.search-form {
-            margin-left: 0;
-            margin-right: 0;
-            padding: $nav-link-padding;
+        li.search {
+            min-height: 1px; //IE hack
+            min-width: 3rem;
 
-            span.form-control-expand {
-                @media (max-width: $grid-float-breakpoint-max) {
-                    display: none !important;
-                }
-            }
-            @media (min-width: $grid-float-breakpoint) {
-                padding-top: 5px;
-                position: absolute;
-                right: 5px;
+            .navbar-form.search-form {
+                margin-left: 0;
+                margin-right: 0;
+                padding: $nav-link-padding;
 
-                .form-group {
-                    float: right !important;
-                    transition: all .35s, border-radius 0s;
-                    width: 32px;
-                    height: 32px;
-                    background-color: $body-bg;
-                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-                    border-radius: 6px;
-                    border: 1px solid $gray-lighter;
-                }
-
-                .form-group input.form-control {
-                    padding-right: 25px;
-                    border: 0 none;
-                    background: transparent;
-                    box-shadow: none;
-                    opacity: 0;
-                    pointer-events: none;
-                    width: 500px;
-                }
-                //.search-form .form-group:hover
-                .form-group.hover {
-                    width: 100%;
-                    border-radius: 4px 6px 4px 4px;
-
-                    input.form-control {
-                        pointer-events: all;
-                        opacity: 1;
-                        transition: all 1.75s ease;
+                span.form-control-expand {
+                    @media (max-width: $grid-float-breakpoint-max) {
+                        display: none !important;
                     }
                 }
-
-                input:-webkit-autofill {
-                    -webkit-box-shadow: 0 0 0 1000px #ffffff inset!important;
-                    //border-radius: 8px;
-                }
-
-                .form-group span.form-control-expand {
+                @media (min-width: $grid-float-breakpoint) {
+                    padding-top: 5px;
                     position: absolute;
-                    top: -1px;
-                    right: -2px;
-                    z-index: 1000;
-                    display: block;
-                    width: 34px;
-                    height: 34px;
-                    line-height: 34px;
-                    text-align: center;
-                    color: $brand-primary;
-                    left: initial;
-                    font-size: 14px;
-                    transition: color .5s ease;
+                    right: 5px;
 
-                    &:hover {
-                        color: $brand-tundra;
+                    .form-group {
+                        float: right !important;
+                        transition: all .35s, border-radius 0s;
+                        width: 32px;
+                        height: 32px;
+                        background-color: $body-bg;
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+                        border-radius: 6px;
+                        border: 1px solid $gray-lighter;
+                    }
+
+                    .form-group input.form-control {
+                        padding-right: 25px;
+                        border: 0 none;
+                        background: transparent;
+                        box-shadow: none;
+                        opacity: 0;
+                        pointer-events: none;
+                        width: 500px;
+                    }
+                    //.search-form .form-group:hover
+                    .form-group.hover {
+                        width: 100%;
+                        border-radius: 4px 6px 4px 4px;
+
+                        input.form-control {
+                            pointer-events: all;
+                            opacity: 1;
+                            transition: all 1.75s ease;
+                        }
+                    }
+
+                    input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0 1000px #ffffff inset!important;
+                        //border-radius: 8px;
+                    }
+
+                    .form-group span.form-control-expand {
+                        position: absolute;
+                        top: -1px;
+                        right: -2px;
+                        z-index: 1000;
+                        display: block;
+                        width: 34px;
+                        height: 34px;
+                        line-height: 34px;
+                        text-align: center;
+                        color: $brand-primary;
+                        left: initial;
+                        font-size: 14px;
+                        transition: color .5s ease;
+
+                        &:hover {
+                            color: $brand-tundra;
+                        }
                     }
                 }
             }
         }
-    }
-
-    .navbar-nav {
-        margin: 0 (-$navbar-padding-horizontal);
     }
 
     .navbar-toggle {
@@ -247,13 +266,15 @@
                     }
 
                     a {
-                        font-size: $font-size-base - 1;
-                        color: $navbar-inverse-link-color;
-                        padding: 10px 15px 10px 60px;
-                        display: block;
+                        //@include text-overflow();
+
                         clear: both;
+                        color: $navbar-inverse-link-color;
+                        display: block;
+                        font-size: $font-size-base - 1;
                         line-height: $line-height-computed;
-                        white-space: nowrap;
+                        padding: 10px 15px 10px 60px;
+                        //white-space: nowrap;
 
                         &,
                         strong {
@@ -266,6 +287,11 @@
                 ul.dropdown-menu {
                     background-color: lighten($navbar-inverse-bg, 7%);
 
+                    ul.row {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+
                     li > a {
                         border-bottom: 1px solid darken($navbar-inverse-bg, 1%);
                     }
@@ -274,7 +300,7 @@
                         padding-left: 30px;
                     }
 
-                    > li > a {
+                    > li > ul > li > a {
                         padding-left: 45px;
                     }
                 }
@@ -394,15 +420,38 @@
                     transition: all 1s ease;
                     @include box-shadow(3px 3px 6px rgba(0,0,0,.525));
 
+                    &.columns-3 {
+                        &.menu-1 {
+                            left: -$navbar-drop-column-width * .3;
+                        }
+
+                        &.menu-2 {
+                            left: -$navbar-drop-column-width * 1.1;
+                        }
+
+                        &.menu-3 {
+                            left: -$navbar-drop-column-width * 1.8;
+                        }
+                    }
+
                     &.columns-1 {
                         min-width: auto;
+
                         li {
                             min-width: $navbar-drop-column-width;
-                        }                        
+                        }
                     }
 
                     &.columns-2 {
                         min-width: $navbar-drop-column-width * 2;
+
+                        &.menu-3 {
+                            left: -$navbar-drop-column-width * .75;
+                        }
+
+                        li {
+                          //  min-width: $navbar-drop-column-width;
+                        }
                     }
                     @media (min-width: $screen-lg-min) {
                         min-width: $navbar-drop-column-width * 4.5;
@@ -412,7 +461,18 @@
                         }
 
                         &.columns-2 {
-                            min-width: $navbar-drop-column-width * 3.25;
+                            min-width: $navbar-drop-column-width * 3.5;
+
+                            /*&.menu-2 {
+                                left: -$navbar-drop-column-width * 1;
+                            } */
+                            &.menu-3 {
+                                left: -$navbar-drop-column-width * 1;
+                            }
+                        }
+
+                        &.columns-3.menu-3 {
+                            left: -$navbar-drop-column-width * 2;
                         }
                     }
 
@@ -423,7 +483,7 @@
                     }
 
                     ul.row > li {
-                      margin-top: 10px;
+                        margin-top: 10px;
                     }
 
                     > li:first-child > a {

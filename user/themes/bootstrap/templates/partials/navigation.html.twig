@@ -55,7 +55,7 @@
                                     <i class="dropdown-pointer"></i>
                                 </span>
                             </a>
-                            <ul {% set columns = page.children.visible.count < 3 ? page.children.visible.count : 3 %} class="dropdown-menu row list-unstyled columns-{{ columns }}" role="menu">
+                            <ul {% set columns = page.children.visible.count < 3 ? page.children.visible.count : 3 %} class="dropdown-menu menu-{{ loop.index0 }} row list-unstyled columns-{{ columns }}" role="menu">
                                 {% set current_parent = page.active
                                     ? 'active'
                                     : '' %}
@@ -65,13 +65,13 @@
                                     </a>
                                 </li>
                                 <li class="divider col-sm-12"></li>
-                                <li class="col-sm-12 col-lg-{{ columns * 3 }}">
-                                    <ul class="row">
+                                <li class="col-sm-12 col-lg-{{ columns * 3 + (columns == 2 ? 1 : 0) }}">
+                                    <ul class="row list-unstyled">
                                         {% for child in page.children.visible %}
                                             {% set current_child = (child.active or child.activeChild)
                                                 ? 'active'
                                                 : '' %}
-                                            <li class="{{ current_child }} col-sm-4 col-lg-{{ 12 / columns }}">
+                                            <li class="{{ current_child }} col-sm-{{ 12 / columns }}">
                                                 <a href="{{ child.url }}">
                                                     <strong>{{ child.menu }}</strong>
                                                 </a>

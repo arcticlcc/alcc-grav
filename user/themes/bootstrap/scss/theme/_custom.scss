@@ -1,22 +1,3 @@
-$navbar-gradient: floor(($navbar-height * .4)) !default;
-$navbar-gradient-alt: #9eac5f;
-$navbar-gradient-alt: #66B8B8;
-$navbar-gradient-alt: $body-bg;
-$navbar-gradient-top: lighten($gray-dark,7);
-@mixin gradient-vertical-stripe($navbar-gradient-stop: $navbar-gradient, $navbar-gradient-size: 3, $color: $body-bg) {
-    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$brand-info+40,ffffff+41,ffffff+44,207cca+45
-    // Old browsers
-    background: $navbar-gradient-top;
-    // FF3.6-15
-    background: -moz-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop, $color $navbar-gradient-stop +1, $navbar-gradient-stop + $navbar-gradient-size, $brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
-    // Chrome10-25,Safari5.1-6
-    background: -webkit-linear-gradient(top, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
-    // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
-    background: linear-gradient(to bottom, $navbar-gradient-top $navbar-gradient-stop,$color $navbar-gradient-stop + 1,$color $navbar-gradient-stop + $navbar-gradient-size,$brand-primary $navbar-gradient-stop + $navbar-gradient-size + 1);
-    //IE6-9
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '$navbar-gradient-top', endColorstr='$brand-primary',GradientType=0);
-}
-
 body {
     @media (min-width: $grid-float-breakpoint) {
         padding-top: 115px;
@@ -32,6 +13,11 @@ body {
         hr {
           max-width: 400px;
           margin-left: 0;
+        }
+
+        .contacts .row > div:first-child {
+          padding-left: 0;
+          padding-right: 0;
         }
     }
 }
